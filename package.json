@@ -1,0 +1,18 @@
+{
+  "name": "oinc-personal-finance",
+  "version": "1.0.0",
+  "description": "A Progressive Web App build with Pug.js",
+  "repository": "https://github.com/vagnerlandio/oinc-personal-finance",
+  "author": "Vagnerlandio Nunes <vagnerlandio@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}
