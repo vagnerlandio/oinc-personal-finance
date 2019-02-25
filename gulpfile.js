@@ -23,6 +23,11 @@ function stylesheetsPath(param) {
   return (typeof param === 'undefined') ? path : path + param;
 }
 
+function imagesPath(param) {
+  const path = 'src/assets/images/';
+  return (typeof param === 'undefined') ? path : path + param;
+}
+
 function materializePath(param) {
   const path = './node_modules/materialize-css/';
   return (typeof param === 'undefined') ? path : path + param;
@@ -71,6 +76,7 @@ function build(done) {
     parallel(
       scripts,
       styles,
+      images,
       views
     )
   )(done);
@@ -109,6 +115,11 @@ function styles(done) {
   series(application, materialize)(done);
 }
 
+function images() {
+  return src(imagesPath('**/*.*'))
+    .pipe(dest('dist/img'));
+}
+
 function views() {
   return src(viewsPath('application.pug'))
     .pipe(pug())
@@ -120,6 +131,7 @@ function views() {
 function watcher() {
   watch(javascriptsPath('**/*.js'), series(scripts, reload));
   watch(stylesheetsPath('**/*.scss'), series(styles, reload));
+  watch(imagesPath('**/*.*'), series(images, reload));
   watch(viewsPath('**/*.pug'), series(views, reload));
 }
 
@@ -149,6 +161,7 @@ exports.build   = series(
   parallel(
     scripts,
     styles,
+    images,
     views
   )
 );
