@@ -10,12 +10,12 @@ sidenavLinks.forEach(function(elem) {
   });
 });
 
-let overview = document.querySelector('#overview');
-let accounts = document.querySelector('#accounts');
-let transactions = document.querySelector('#transactions');
-let categories = document.querySelector('#categories');
-let settings = document.querySelector('#settings');
-let about = document.querySelector('#about');
+let overview = document.querySelector('#overview-link');
+let accounts = document.querySelector('#accounts-link');
+let transactions = document.querySelector('#transactions-link');
+let categories = document.querySelector('#categories-link');
+let settings = document.querySelector('#settings-link');
+let about = document.querySelector('#about-link');
 
 overview.addEventListener('click', function() {
   window.history.pushState(
