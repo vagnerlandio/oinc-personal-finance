@@ -94,7 +94,13 @@ function scripts(done) {
       .pipe(dest('dist/js'));
   }
 
-  series(application, materialize)(done);
+  function pages() {
+    return src(javascriptsPath('pages/*.js'))
+      .pipe(concat('pages.js'))
+      .pipe(dest('dist/js'));
+  }
+
+  series(application, pages, materialize)(done);
 }
 
 function styles(done) {

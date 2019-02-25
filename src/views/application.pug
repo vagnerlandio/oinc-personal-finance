@@ -14,9 +14,14 @@ html
       include _navbar.pug
       include _sidenav.pug
     main
-      h1 Exemplo
-      a.waves-effect.waves-light.btn button
+      include overview.pug
+      include accounts.pug
+      include transactions.pug
+      include categories.pug
+      include settings.pug
+      include about.pug
     footer
     // JavaScript at end of body for optimized loading
     script(type='text/javascript', src='js/materialize.js')
+    script(type='text/javascript', src='js/pages.js')
     script(type='text/javascript', src='js/application.js')
