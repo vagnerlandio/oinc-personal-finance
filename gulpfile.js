@@ -126,11 +126,21 @@ function images() {
     .pipe(dest('dist/img'));
 }
 
-function views() {
-  return src(viewsPath('application.pug'))
-    .pipe(pug())
-    .pipe(rename('index.html'))
-    .pipe(dest('dist'));
+function views(done) {
+  function application() {
+    return src(viewsPath('application.pug'))
+      .pipe(pug())
+      .pipe(rename('index.html'))
+      .pipe(dest('dist'));
+  }
+
+  function redirects() {
+    return src(viewsPath('redirects/*.pug'))
+      .pipe(pug())
+      .pipe(dest('dist'));
+  }
+
+  series(application, redirects)(done);
 }
 
 // Server
@@ -150,8 +160,10 @@ function serve(done) {
   server.init({
     server: {
       baseDir: './dist',
+      serveStaticOptions: {
+        extensions: ['html']
+      }
     },
-
     // Set 'false' to prevents browser automatically open when the server starts
     open: false,
   });
