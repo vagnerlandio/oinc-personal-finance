@@ -172,34 +172,6 @@ function views(done) {
           addPrefix: 'js',
         }
       ))
-
-      // .pipe(inject(
-      //   src('./src/models/*.js',
-      //   // { read: false }),
-      //   {
-      //     starttag: '//- inject:js/models',
-      //     relative: true,
-      //     transform: (filePath, file) => file.contents.toString('utf8')
-      //   }
-      // ))
-      // .pipe(inject(
-      //   src('./src/helpers/*.js',
-      //   // { read: false }),
-      //   {
-      //     starttag: '//- inject:js/helpers',
-      //     relative: true,
-      //     transform: (filePath, file) => file.contents.toString('utf8')
-      //   }
-      // ))
-      // .pipe(inject(
-      //   src('./src/controllers/*.js',
-      //   // { read: false }),
-      //   {
-      //     starttag: '//- inject:js/controllers',
-      //     relative: true,
-      //     transform: (filePath, file) => file.contents.toString('utf8')
-      //   }
-      // ))
       .pipe(pug({
         pretty: true,
       }))
