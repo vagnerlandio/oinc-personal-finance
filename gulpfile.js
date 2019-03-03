@@ -221,6 +221,11 @@ function views(done) {
 // Server
 function watcher() {
   watch(javascriptsPath('**/*.js'), series(scripts, reload));
+  watch([
+    'src/models/*.js',
+    'src/helpers/*.js',
+    'src/controllers/*.js',
+  ], series(scripts, reload));
   watch(stylesheetsPath('**/*.scss'), series(styles, reload));
   watch(imagesPath('**/*.*'), series(images, reload));
   watch(viewsPath('**/*.pug'), series(views, reload));
