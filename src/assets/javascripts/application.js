@@ -77,3 +77,5 @@ about.addEventListener('click', function() {
     'about'
   );
 });
+
+const $ = document.querySelector.bind(document);
