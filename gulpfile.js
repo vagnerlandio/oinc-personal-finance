@@ -5,6 +5,7 @@ const del         = require('del');
 const browserSync = require('browser-sync');
 const rename      = require('gulp-rename');
 const concat      = require('gulp-concat');
+const inject      = require('gulp-inject');
 const server      = browserSync.create();
 
 // Aux variables and functions
@@ -100,7 +101,22 @@ function scripts(done) {
       .pipe(dest('dist/js'));
   }
 
-  series(application, pages, materialize)(done);
+  function models() {
+    return src('./src/models/*.js')
+      .pipe(dest('dist/js/models'));
+  }
+
+  function controllers() {
+    return src('./src/controllers/*.js')
+      .pipe(dest('dist/js/controllers'));
+  }
+
+  function helpers() {
+    return src('./src/helpers/*.js')
+      .pipe(dest('dist/js/helpers'));
+  }
+
+  series(application, pages, materialize, models, controllers, helpers)(done);
 }
 
 function styles(done) {
@@ -129,14 +145,73 @@ function images() {
 function views(done) {
   function application() {
     return src(viewsPath('application.pug'))
-      .pipe(pug())
+      .pipe(inject(
+        src('./src/models/*.js', { read: false }),
+        {
+          starttag: '//- inject:js/models',
+          addRootSlash: false,
+          ignorePath: 'src',
+          addPrefix: 'js',
+        }
+      ))
+      .pipe(inject(
+        src('./src/helpers/*.js', { read: false }),
+        {
+          starttag: '//- inject:js/helpers',
+          addRootSlash: false,
+          ignorePath: 'src',
+          addPrefix: 'js',
+        }
+      ))
+      .pipe(inject(
+        src('./src/controllers/*.js', { read: false }),
+        {
+          starttag: '//- inject:js/controllers',
+          addRootSlash: false,
+          ignorePath: 'src',
+          addPrefix: 'js',
+        }
+      ))
+
+      // .pipe(inject(
+      //   src('./src/models/*.js',
+      //   // { read: false }),
+      //   {
+      //     starttag: '//- inject:js/models',
+      //     relative: true,
+      //     transform: (filePath, file) => file.contents.toString('utf8')
+      //   }
+      // ))
+      // .pipe(inject(
+      //   src('./src/helpers/*.js',
+      //   // { read: false }),
+      //   {
+      //     starttag: '//- inject:js/helpers',
+      //     relative: true,
+      //     transform: (filePath, file) => file.contents.toString('utf8')
+      //   }
+      // ))
+      // .pipe(inject(
+      //   src('./src/controllers/*.js',
+      //   // { read: false }),
+      //   {
+      //     starttag: '//- inject:js/controllers',
+      //     relative: true,
+      //     transform: (filePath, file) => file.contents.toString('utf8')
+      //   }
+      // ))
+      .pipe(pug({
+        pretty: true,
+      }))
       .pipe(rename('index.html'))
       .pipe(dest('dist'));
   }
 
   function redirects() {
     return src(viewsPath('redirects/*.pug'))
-      .pipe(pug())
+      .pipe(pug({
+        pretty: true,
+      }))
       .pipe(dest('dist'));
   }
 
