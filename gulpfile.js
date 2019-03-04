@@ -78,6 +78,7 @@ function build(done) {
       scripts,
       styles,
       images,
+      resources,
       views
     )
   )(done);
@@ -190,6 +191,20 @@ function views(done) {
   series(application, redirects)(done);
 }
 
+function resources(done) {
+  function materialDesignIcons() {
+    return src([
+      './node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot',
+      './node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2',
+      './node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff',
+      './node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf',
+    ])
+      .pipe(dest('dist/res'));
+  }
+
+  series(materialDesignIcons)(done);
+}
+
 // Server
 function watcher() {
   watch(javascriptsPath('**/*.js'), series(scripts, reload));
@@ -232,6 +247,7 @@ exports.build   = series(
     scripts,
     styles,
     images,
+    resources,
     views
   )
 );
