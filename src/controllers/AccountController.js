@@ -1,8 +1,8 @@
 class AccountController {
   constructor() {
-    let inputDescription = document.querySelector('#account-description');
-    let inputOpeningBalance = document.querySelector('#account-opening-balance');
-    let inputCategory = document.querySelector('#account-category');
+    this.inputDescription = document.querySelector('#account-description');
+    this.inputOpeningBalance = document.querySelector('#account-opening-balance');
+    this.inputCategory = document.querySelector('#account-category');
   }
 
   new(event) {
