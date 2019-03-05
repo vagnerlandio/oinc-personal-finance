@@ -1,12 +1,15 @@
 class ExpenseController {
+  constructor() {
+    let inputDescription = document.querySelector('#expense-description');
+    let inputAmount = document.querySelector('#expense-amount');
+    let inputDueDate = document.querySelector('#expense-due-date');
+    let inputStatus = document.querySelector('#expense-status');
+    let inputCategory = document.querySelector('#expense-category');
+    let inputAccount = document.querySelector('#expense-account');
+  }
+
   new(event) {
     event.preventDefault();
-    let inputDescription = $('#expense-description');
-    let inputAmount = $('#expense-amount');
-    let inputDueDate = $('#expense-due-date');
-    let inputStatus = $('#expense-status');
-    let inputCategory = $('#expense-category');
-    let inputAccount = $('#expense-account');
   }
 }
 
