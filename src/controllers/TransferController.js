@@ -10,6 +10,15 @@ class TransferController {
 
   new(event) {
     event.preventDefault();
+
+    let transfer = new Transfer(
+      this.inputDescription,
+      this.inputAmount,
+      this.inputDueDate,
+      this.inputStatus,
+      this.inputOrigin,
+      this.inputDestination
+    );
   }
 }
 

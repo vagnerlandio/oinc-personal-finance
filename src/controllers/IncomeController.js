@@ -10,6 +10,15 @@ class IncomeController {
 
   new(event) {
     event.preventDefault();
+
+    let income = new Income(
+      this.inputDescription,
+      this.inputAmount,
+      this.inputDueDate,
+      this.inputStatus,
+      this.inputCategory,
+      this.inputAccount
+    );
   }
 }
 

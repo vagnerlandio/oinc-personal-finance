@@ -10,6 +10,15 @@ class ExpenseController {
 
   new(event) {
     event.preventDefault();
+
+    let expense = new Expense(
+      this.inputDescription,
+      this.inputAmount,
+      this.inputDueDate,
+      this.inputStatus,
+      this.inputCategory,
+      this.inputAccount
+    );
   }
 }
 

@@ -7,6 +7,12 @@ class AccountController {
 
   new(event) {
     event.preventDefault();
+
+    let account = new Account(
+      this.inputDescription.value,
+      this.inputOpeningBalance.value,
+      this.inputCategory.value
+    );
   }
 }
 
