@@ -1,10 +1,11 @@
 // about.js
 let aboutPage = {
+  title: 'About',
   element: document.querySelector('#about'),
 };
 
 class About {
   static load() {
-    console.log('asds');
+    ApplicationHelper.updateTitle(aboutPage.title);
   }
 }

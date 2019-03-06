@@ -15,7 +15,7 @@ let accounts = document.querySelector('#accounts-link');
 let transactions = document.querySelector('#transactions-link');
 let categories = document.querySelector('#categories-link');
 let settings = document.querySelector('#settings-link');
-let about = document.querySelector('#about-link');
+// let about = document.querySelector('#about-link');
 
 overview.addEventListener('click', function() {
   window.history.pushState(
@@ -68,6 +68,7 @@ settings.addEventListener('click', function() {
   );
 });
 about.addEventListener('click', function() {
+  About.load();
   window.history.pushState(
     // State
     {id: ''},

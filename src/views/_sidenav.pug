@@ -9,31 +9,31 @@ ul#sidenav.sidenav.sidenav-fixed
       span.white-text.name John Doe
     a(href='#email')
       span.white-text.email johndoe@gmail.com
-  li#overview-link
+  li#overview-link(onclick="Overview.load()")
     //- https://*.*/
     a.sidenav-close(href="/") Overview
       i.material-icons dashboard
-  li#accounts-link
+  li#accounts-link(onclick="Accounts.load()")
     //- https://*.*/accounts/
     a.sidenav-close(href="accounts") Accounts
       i.material-icons account_balance_wallet
-  li#transactions-link
+  li#transactions-link(onclick="Transactions.load()")
     //- https://*.*/transitions/
     a.sidenav-close(href="transactions") Transactions
       i.material-icons money
   li.divider
   li
     a.subheader Manager
-  li#categories-link
+  li#categories-link(onclick="Categories.load()")
     //- https://*.*/categories/
     a.sidenav-close(href="categories") Categories
       i.material-icons label
   li.divider
-  li#settings-link
+  li#settings-link(onclick="Settings.load()")
     //- https://*.*/settings/
     a.sidenav-close(href="settings") Settings
       i.material-icons settings
-  li#about-link
+  li#about-link(onclick="About.load()")
     //- https://*.*/about/
     a.sidenav-close(href="about") About
       i.material-icons info
