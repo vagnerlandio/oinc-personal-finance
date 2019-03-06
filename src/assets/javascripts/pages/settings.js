@@ -1,2 +1,4 @@
 // settings.js
-let settingsPage = document.querySelector('#settings');
+let settingsPage = {
+  element: document.querySelector('#settings'),
+};

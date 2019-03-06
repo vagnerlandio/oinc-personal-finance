@@ -1,2 +1,4 @@
 // accounts.js
-let accountsPage = document.querySelector('#accounts');
+let accountsPage = {
+  element: document.querySelector('#accounts'),
+};

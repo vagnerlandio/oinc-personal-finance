@@ -1,2 +1,10 @@
 // about.js
-let aboutPage = document.querySelector('#about');
+let aboutPage = {
+  element: document.querySelector('#about'),
+};
+
+class About {
+  static load() {
+    console.log('asds');
+  }
+}

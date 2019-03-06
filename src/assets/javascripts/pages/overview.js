@@ -1,2 +1,4 @@
 // overview.js
-let overviewPage = document.querySelector('#overview');
+let overviewPage = {
+  element: document.querySelector('#overview'),
+};

@@ -1,2 +1,4 @@
 // transactions.js
-let transactionsPage = document.querySelector('#about');
+let transactionsPage = {
+  element: document.querySelector('#about'),
+};

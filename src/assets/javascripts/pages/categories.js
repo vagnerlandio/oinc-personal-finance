@@ -1,2 +1,4 @@
 // categories.js
-let categoriesPage = document.querySelector('#categories');
+let categoriesPage = {
+  element: document.querySelector('#categories'),
+};
