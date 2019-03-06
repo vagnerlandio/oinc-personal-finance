@@ -6,4 +6,12 @@ class ApplicationHelper {
   static updateTitle(title) {
     document.querySelector('.brand-logo').text = title;
   }
+
+  static updateUrl(id, title, url) {
+    window.history.pushState(
+      { id: id },
+      title,
+      url
+    );
+  }
 }
