@@ -10,5 +10,6 @@ class Settings {
   static load() {
     ApplicationHelper.updateTitle(settingsPage.title);
     ApplicationHelper.updateUrl(settingsPage.id, settingsPage.title, settingsPage.url);
+    ApplicationHelper.updateContent(settingsPage.element, event);
   }
 }

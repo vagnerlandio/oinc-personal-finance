@@ -9,3 +9,12 @@ sidenavLinks.forEach(function(elem) {
     event.preventDefault();
   });
 });
+
+const pages = [
+  aboutPage.element,
+  accountsPage.element,
+  categoriesPage.element,
+  overviewPage.element,
+  settingsPage.element,
+  transactionsPage.element,
+];

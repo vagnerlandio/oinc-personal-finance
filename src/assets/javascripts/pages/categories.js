@@ -10,5 +10,6 @@ class Categories {
   static load() {
     ApplicationHelper.updateTitle(categoriesPage.title);
     ApplicationHelper.updateUrl(categoriesPage.id, categoriesPage.title, categoriesPage.url);
+    ApplicationHelper.updateContent(categoriesPage.element, event);
   }
 }

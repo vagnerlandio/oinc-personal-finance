@@ -10,5 +10,6 @@ class Accounts {
   static load() {
     ApplicationHelper.updateTitle(accountsPage.title);
     ApplicationHelper.updateUrl(accountsPage.id, accountsPage.title, accountsPage.url);
+    ApplicationHelper.updateContent(accountsPage.element, event);
   }
 }

@@ -1,39 +1,39 @@
 ul#sidenav.sidenav.sidenav-fixed
   li
-  .user-view
-    .background
-      img(src='img/background.jpg')
-    a(href='#user')
-      img.circle(src='img/profile.jpg')
-    a(href='#name')
-      span.white-text.name John Doe
-    a(href='#email')
-      span.white-text.email johndoe@gmail.com
-  li#overview-link(onclick="Overview.load()")
+    .user-view
+      .background
+        img(src='img/background.jpg')
+      a(href='#user')
+        img.circle(src='img/profile.jpg')
+      a(href='#name')
+        span.white-text.name John Doe
+      a(href='#email')
+        span.white-text.email johndoe@gmail.com
+  li#overview-link(onclick="Overview.load(event)")
     //- https://*.*/
     a.sidenav-close(href="/") Overview
       i.material-icons dashboard
-  li#accounts-link(onclick="Accounts.load()")
+  li#accounts-link(onclick="Accounts.load(event)")
     //- https://*.*/accounts/
     a.sidenav-close(href="accounts") Accounts
       i.material-icons account_balance_wallet
-  li#transactions-link(onclick="Transactions.load()")
+  li#transactions-link(onclick="Transactions.load(event)")
     //- https://*.*/transitions/
     a.sidenav-close(href="transactions") Transactions
       i.material-icons money
   li.divider
   li
     a.subheader Manager
-  li#categories-link(onclick="Categories.load()")
+  li#categories-link(onclick="Categories.load(event)")
     //- https://*.*/categories/
     a.sidenav-close(href="categories") Categories
       i.material-icons label
   li.divider
-  li#settings-link(onclick="Settings.load()")
+  li#settings-link(onclick="Settings.load(event)")
     //- https://*.*/settings/
     a.sidenav-close(href="settings") Settings
       i.material-icons settings
-  li#about-link(onclick="About.load()")
+  li#about-link(onclick="About.load(event)")
     //- https://*.*/about/
     a.sidenav-close(href="about") About
       i.material-icons info
