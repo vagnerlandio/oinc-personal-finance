@@ -3,6 +3,7 @@ class AccountController {
     this.inputDescription = document.querySelector('#account-description');
     this.inputOpeningBalance = document.querySelector('#account-opening-balance');
     this.inputCategory = document.querySelector('#account-category');
+    this._toast = new Toast();
   }
 
   new(event) {
@@ -13,6 +14,8 @@ class AccountController {
       this.inputOpeningBalance.value,
       this.inputCategory.value
     );
+
+    M.toast({ html: 'Account created with successus!' });
   }
 }
 

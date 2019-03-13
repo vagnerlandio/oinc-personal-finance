@@ -19,6 +19,8 @@ class IncomeController {
       this.inputCategory,
       this.inputAccount
     );
+
+    M.toast({ html: 'Income created with successus!' });
   }
 }
 

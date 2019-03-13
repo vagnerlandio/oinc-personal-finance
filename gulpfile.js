@@ -47,7 +47,7 @@ const materializeFiles = [
   // materializePath('js/tabs.js'),
   // materializePath('js/tooltip.js'),
   // materializePath('js/waves.js'),
-  // materializePath('js/toasts.js'),
+  materializePath('js/toasts.js'),
   materializePath('js/sidenav.js'),
   // materializePath('js/scrollspy.js'),
   // materializePath('js/autocomplete.js'),

@@ -19,6 +19,8 @@ class ExpenseController {
       this.inputCategory,
       this.inputAccount
     );
+
+    M.toast({ html: 'Expense created with successus!' });
   }
 }
 

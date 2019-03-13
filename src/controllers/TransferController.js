@@ -19,6 +19,8 @@ class TransferController {
       this.inputOrigin,
       this.inputDestination
     );
+
+    M.toast({ html: 'Transfer created with successus!' });
   }
 }
 
